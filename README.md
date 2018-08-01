@@ -46,5 +46,5 @@ void onCommand(Member sender, TextChannel channel, String[] args, Message messag
 * @param sender The member that executed the command
 * @return The Embed to send when a command does not meet the argument requirements
 */
-    EmbedBuilder getIncorrectEmbed(String usage, Member sender);
+EmbedBuilder getIncorrectEmbed(String usage, Member sender);
 ```
