@@ -33,12 +33,10 @@ public class CommandHandler {
     public void registerCommands(Command... command){
         for(Command cmd : command) {
             commands.add(cmd);
-            System.out.println(cmd.getUsage());
         }
     }
 
     public List<Command> getCommands(){
-        System.out.println(commands);
         return commands;
     }
 
