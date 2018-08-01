@@ -24,3 +24,27 @@ Easy to use Command Handler for the Java Discord Bot API JDA
 | `setIncorrectChannelMessage(Message incorrectChannel)`  | Sets the message to send when a command is executed in a channel that the command does not have on its whitelist  |
 | `setInsufficientPermissionsMessage(Message insufficientPermissions)`  | Sets the message to send when a member does not meet the required permissions for the command they are trying to execute  |
 
+#### CommandExecuteListener
+
+```java
+/**
+* Runs when the specified command is run
+* @param sender The member who executed the command
+* @param channel The channel the command was sent in
+* @param args A string array of each word in the command except the command itself
+* @param message The message of the command
+*/
+void onCommand(Member sender, TextChannel channel, String[] args, Message message);
+```
+
+#### IncorrectUsageEmbed
+
+```java
+/**
+* The embed to send when a command is incorrectly used
+* @param usage The correct usage of the command
+* @param sender The member that executed the command
+* @return The Embed to send when a command does not meet the argument requirements
+*/
+    EmbedBuilder getIncorrectEmbed(String usage, Member sender);
+```
