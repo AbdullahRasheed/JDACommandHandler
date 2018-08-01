@@ -16,7 +16,6 @@ public class CommandExecutor extends ListenerAdapter {
 
         for(Command cmd : cmdHandler.getCommands()){
             for(String aliases : cmd.getAliases()){
-                System.out.println(aliases);
                 if(command.equalsIgnoreCase(cmdHandler.getPrefix() + aliases)) {
                     if (cmd.getRequiredPermissions().isEmpty()) {
                         if (args.length >= cmd.getRequiredArgs()) {
@@ -49,7 +48,7 @@ public class CommandExecutor extends ListenerAdapter {
                                     event.getChannel().sendMessage(cmdHandler.getIncorrectUsageEmbed().getIncorrectEmbed(cmd.getUsage(), event.getMember()).build()).complete().delete().queueAfter(15, TimeUnit.SECONDS);
                                 }
                             }else{
-
+                                event.getChannel().sendMessage(cmdHandler.getInsufficientPermissionsMessage()).queue();
                             }
                         }
                     }
