@@ -25,6 +25,10 @@ Easy to use Command Handler for the Java Discord Bot API JDA
 | `setPrefix(String prefix)`  | Sets the prefix used for all commands  |
 | `setIncorrectChannelMessage(Message incorrectChannel)`  | Sets the message to send when a command is executed in a channel that the command does not have on its whitelist  |
 | `setInsufficientPermissionsMessage(Message insufficientPermissions)`  | Sets the message to send when a member does not meet the required permissions for the command they are trying to execute  |
+| `getPrefix()`  | Gets the prefix used for all commands  |
+| `getIncorrectUsageEmbed()`  | Gets the embed that is sent when a command is executed with not enough arguments  |
+| `getInsufficientPermissionsMessage()`  | Gets the message that is sent when a command is executed by a member that does not have the required permissions to execute the command  |
+| `getIncorrectChannelMessage()`  | Gets the message that is sent when a command is executed in a channel that the command does not have whitelisted  |
 
 #### CommandExecuteListener
 
