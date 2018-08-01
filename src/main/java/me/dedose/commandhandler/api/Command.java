@@ -1,8 +1,10 @@
 package me.dedose.commandhandler.api;
 
 import me.dedose.commandhandler.api.listeners.CommandExecuteListener;
+import net.dv8tion.jda.core.Permission;
 import net.dv8tion.jda.core.entities.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Command {
@@ -10,7 +12,8 @@ public class Command {
     String[] aliases;
     String description = "No description defined";
     String usage = "No usage defined";
-    List<TextChannel> usableChannels = null;
+    List<TextChannel> usableChannels = new ArrayList<>();
+    List<Permission> requiredPermissions = new ArrayList<>();
     int requiredArgs = 0;
     CommandExecuteListener cmdExecuteListener = new CommandExecuteListener() {
         public void onCommand(Member sender, TextChannel channel, String[] args, Message message) {
@@ -34,12 +37,16 @@ public class Command {
         this.requiredArgs = requiredArgs;
     }
 
+    public void setRequiredPermissions(Permission... permissions) {
+        for(Permission perm : permissions) requiredPermissions.add(perm);
+    }
+
     public void setCommandExecuteListener(CommandExecuteListener cmdExecuteListener){
         this.cmdExecuteListener = cmdExecuteListener;
     }
 
-    public void setUsableChannels(List<TextChannel> usableChannels){
-        this.usableChannels = usableChannels;
+    public void setUsableChannels(TextChannel... usableChannels){
+        for(TextChannel channel : usableChannels) this.usableChannels.add(channel);
     }
 
     public void register(){
@@ -65,6 +72,10 @@ public class Command {
 
     public List<TextChannel> getUsableChannels(){
         return usableChannels;
+    }
+
+    public List<Permission> getRequiredPermissions(){
+        return requiredPermissions;
     }
 
     public CommandExecuteListener getCommandExecuteListener(){

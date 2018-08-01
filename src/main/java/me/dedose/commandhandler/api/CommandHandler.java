@@ -1,5 +1,6 @@
 package me.dedose.commandhandler.api;
 
+import me.dedose.commandhandler.FinalRegistration;
 import me.dedose.commandhandler.api.listeners.IncorrectUsageEmbed;
 import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.MessageBuilder;
@@ -14,6 +15,7 @@ public class CommandHandler {
 
     String prefix = "!";
     Message incorrectChannel = new MessageBuilder("You can not use that command here!").build();
+    Message insufficientPermissions = new MessageBuilder("You do not have sufficient permissions to use this command!").build();
     IncorrectUsageEmbed incorrectUsageEmbed = new IncorrectUsageEmbed() {
         @Override
         public EmbedBuilder getIncorrectEmbed(String usage, Member sender) {
@@ -26,11 +28,13 @@ public class CommandHandler {
         }
     };
 
-    LinkedList<Command> commands = new LinkedList<>();
+    LinkedList<Command> commands = FinalRegistration.commands;
 
     public void registerCommands(Command... command){
-        for(Command cmd : command) commands.add(cmd);
-        System.out.println(commands);
+        for(Command cmd : command) {
+            commands.add(cmd);
+            System.out.println(cmd.getUsage());
+        }
     }
 
     public List<Command> getCommands(){
@@ -58,7 +62,11 @@ public class CommandHandler {
         this.incorrectChannel = incorrectChannel;
     }
 
-    public Message getIncorrectChannelMessage(){
-        return incorrectChannel;
+    public void setInsufficientPermissionsMessage(Message insufficientPermissions){
+        this.insufficientPermissions = insufficientPermissions;
     }
+
+    public Message getInsufficientPermissionsMessage(){ return insufficientPermissions; }
+
+    public Message getIncorrectChannelMessage(){ return incorrectChannel; }
 }

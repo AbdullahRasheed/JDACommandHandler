@@ -8,7 +8,7 @@ public interface IncorrectUsageEmbed {
      * The embed to send when a command is incorrectly used
      * @param usage The correct usage of the command
      * @param sender The member that executed the command
-     * @return
+     * @return The Embed to send when a command does not meet the argument requirements
      */
     EmbedBuilder getIncorrectEmbed(String usage, Member sender);
 }
