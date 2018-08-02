@@ -32,8 +32,10 @@ public class CommandExecutor extends ListenerAdapter {
                             event.getChannel().sendMessage(cmdHandler.getIncorrectUsageEmbed().getIncorrectEmbed(cmd.getUsage(), event.getMember()).build()).complete().delete().queueAfter(15, TimeUnit.SECONDS);
                         }
                     }else{
+                        int counter = 0;
                         for(Permission perms : cmd.getRequiredPermissions()){
-                            if(event.getMember().getPermissions().contains(perms)){
+                            counter++;
+                            if(event.getMember().getPermissions().contains(perms) && counter == cmd.getRequiredPermissions().size()){
                                 if (args.length >= cmd.getRequiredArgs()) {
                                     if (cmd.getUsableChannels().isEmpty()) {
                                         cmd.getCommandExecuteListener().onCommand(event.getMember(), event.getChannel(), args, event.getMessage());
