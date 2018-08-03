@@ -9,8 +9,13 @@ import java.util.concurrent.TimeUnit;
 
 public class CommandExecutor extends ListenerAdapter {
 
+    CommandHandler cmdHandler;
+
+    public CommandExecutor(CommandHandler cmdHandler){
+        this.cmdHandler = cmdHandler;
+    }
+
     public void onGuildMessageReceived(GuildMessageReceivedEvent event){
-        CommandHandler cmdHandler = new CommandHandler();
         String command = event.getMessage().getContentRaw().split(" ")[0];
         String[] args = Arrays.copyOfRange(event.getMessage().getContentRaw().split(" "), 1, event.getMessage().getContentRaw().split(" ").length);
 
