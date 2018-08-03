@@ -15,7 +15,14 @@ Easy to use Command Handler for the Java Discord Bot API JDA
 | `setRequiredPermissions(Permission... permissions)`  | Sets the permissions required to execute the command (Defaults to usable by anyone)  |
 | `setCommandExecuteListener(CommandExecuteListener cmdExecuteListener)`  | Sets the CommandExecuteListener for the command (Allows you to execute code when the command is executed)  |
 | `setUsableChannels(TextChannel... usableChannels)`  | Sets the channels that can be used to execute the command (Defaults to all channels)  |
-| `register()`  | Registers the command so it can be used  |
+| `setUsableChannels(Guild guild, String... channelNames)`  | Sets the channels that can be used to execute the command (Defaults to all channels)  |
+| `getAliases()`  | Returns the aliasesof the Command  |
+| `getDescription()`  | Returns the Description of the command (Will default to "No description defined" if a description has not been set)  |
+| `getUsage()`  | Returns the Usage of the command (Will default to "No Usage defined" if a usage has not been set  |
+| `getRequiredArgs()`  | Returns the minimum required arguments of the Command  |
+| `getUsableChannels()`  | Returns a list of the usable channels for the Command (If the List is empty, then it allows the command in every channel)  |
+| `getRequiredPermissions()`  | Returns a list of the required permissions to execute the command  |
+| `getCommandExecuteListener()`  | Returns the CommandExecuteListener for the Command  |
 
 ### CommandHandler Methods
 
