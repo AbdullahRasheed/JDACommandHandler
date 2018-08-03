@@ -3,6 +3,8 @@ Easy to use Command Handler for the Java Discord Bot API JDA
 
 **Download** https://github.com/DeDose1/JDACommandHandler/releases
 
+**Tutorial Video** https://www.youtube.com/watch?v=fDDtC3AiGVc
+
 ### Command Methods
 
 | Method  | Description |
