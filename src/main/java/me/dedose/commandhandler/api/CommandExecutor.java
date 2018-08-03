@@ -15,6 +15,10 @@ public class CommandExecutor extends ListenerAdapter {
         this.cmdHandler = cmdHandler;
     }
 
+    /**
+     * Executes the commands
+     * @param event GuildMessageReceivedEvent
+     */
     public void onGuildMessageReceived(GuildMessageReceivedEvent event){
         String command = event.getMessage().getContentRaw().split(" ")[0];
         String[] args = Arrays.copyOfRange(event.getMessage().getContentRaw().split(" "), 1, event.getMessage().getContentRaw().split(" ").length);
