@@ -1,9 +1,8 @@
 # JDACommandHandler
+[![button](https://i.imgur.com/KvctbOF.png)](https://github.com/DeDose1/JDACommandHandler/releases)              
+[![button](https://i.imgur.com/xkoDb8b.png)](https://www.youtube.com/watch?v=fDDtC3AiGVc)
+
 Easy to use Command Handler for the Java Discord Bot API JDA
-
-**Download** https://github.com/DeDose1/JDACommandHandler/releases
-
-**Tutorial Video** https://www.youtube.com/watch?v=fDDtC3AiGVc
 
 ### Command Methods
 
