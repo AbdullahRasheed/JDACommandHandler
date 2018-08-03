@@ -15,6 +15,7 @@ Easy to use Command Handler for the Java Discord Bot API JDA
 | `setRequiredPermissions(Permission... permissions)`  | Sets the permissions required to execute the command (Defaults to usable by anyone)  |
 | `setCommandExecuteListener(CommandExecuteListener cmdExecuteListener)`  | Sets the CommandExecuteListener for the command (Allows you to execute code when the command is executed)  |
 | `setUsableChannels(TextChannel... usableChannels)`  | Sets the channels that can be used to execute the command (Defaults to all channels)  |
+| `setUsableChannels(Guild guild, String... channelNames)`  | Sets the channels that can be used to execute the command (Defaults to all channels)  |
 | `register()`  | Registers the command so it can be used  |
 
 ### CommandHandler Methods
