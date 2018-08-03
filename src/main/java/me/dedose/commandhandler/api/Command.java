@@ -49,6 +49,14 @@ public class Command {
         for(TextChannel channel : usableChannels) this.usableChannels.add(channel);
     }
 
+    public void setUsableChannels(Guild guild, String... channelNames){
+        for(String channels : channelNames) {
+            for(TextChannel channel : guild.getTextChannelsByName(channels, true)) {
+                this.usableChannels.add(channel);
+            }
+        }
+    }
+
     public void register(){
         CommandHandler cmdHandler = new CommandHandler();
         cmdHandler.registerCommands(this);
