@@ -14,6 +14,7 @@ public class FinalRegistration {
 
     private static JDA jda;
     public static LinkedList<Command> commands = new LinkedList<>();
+    public static String prefix = "!";
     private LinkedList<CommandCreator> commandCreators = new LinkedList<>();
 
     public FinalRegistration(JDA jda){

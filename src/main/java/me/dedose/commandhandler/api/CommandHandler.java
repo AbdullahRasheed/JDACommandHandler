@@ -13,7 +13,6 @@ import java.util.List;
 
 public class CommandHandler {
 
-    String prefix = "!";
     Message incorrectChannel = new MessageBuilder("You can not use that command here!").build();
     Message insufficientPermissions = new MessageBuilder("You do not have sufficient permissions to use this command!").build();
     IncorrectUsageEmbed incorrectUsageEmbed = new IncorrectUsageEmbed() {
@@ -49,11 +48,11 @@ public class CommandHandler {
     }
 
     public void setPrefix(String prefix){
-        this.prefix = prefix;
+        FinalRegistration.prefix = prefix;
     }
 
     public String getPrefix(){
-        return prefix;
+        return FinalRegistration.prefix;
     }
 
     public void setIncorrectChannelMessage(Message incorrectChannel){
