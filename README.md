@@ -1,5 +1,5 @@
 # JDACommandHandler
-[![button](https://img.shields.io/badge/Download-v1.1.0-blue.svg)](https://github.com/DeDose1/JDACommandHandler/releases) [![button](https://img.shields.io/badge/Tutorial-v1.0.2-red.svg)](https://www.youtube.com/watch?v=fDDtC3AiGVc)
+[![button](https://img.shields.io/badge/Download-v1.1.0-blue.svg)](https://github.com/DeDose1/JDACommandHandler/releases)
 
 Easy to use Command Handler for the Java Discord Bot API JDA
 
