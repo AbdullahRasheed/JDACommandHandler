@@ -1,3 +1,5 @@
+## THIS IS OUTDATED AND REALLY DUMB, I WOULD NOT RECOMMEND USING THIS. I MIGHT OPTIMIZE THIS IN THE FUTURE
+
 # JDACommandHandler
 [![button](https://img.shields.io/badge/Download-v1.1.0-blue.svg)](https://github.com/DeDose1/JDACommandHandler/releases)
 
